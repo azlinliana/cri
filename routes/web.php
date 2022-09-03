@@ -10,9 +10,16 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 
+/*
+|--------------------------------------------------------------------------
+| Landing Page
+|--------------------------------------------------------------------------
+| -
+|--------------------------------------------------------------------------
+*/
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('landing-page.index');
+})->name('index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
