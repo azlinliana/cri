@@ -134,17 +134,17 @@
       }
     </style>
   </head>
-  <body class="">
+  <body>
     <div class="font-sans text-gray-900 antialiased">
       {{ $slot }}
-    </div>
 
-    <footer class="text-center bg-gray-900 text-white">
-      <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2023 Copyright
-        <a class="text-white">| RMIC UMK</a>
-      </div>
-    </footer>
+      <footer class="bottom-0 text-center bg-gray-900 text-white">
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2023 Copyright
+          <a class="text-white">| RMIC UMK</a>
+        </div>
+      </footer>
+    </div>
 
     <script>
       var scrollpos = window.scrollY;
