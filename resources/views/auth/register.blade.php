@@ -81,7 +81,7 @@
           </div>
 
           <div class="pb-2 pt-4">
-            <input id="phone_number" class="input input-ghost w-full border-2 border-white p-4 text-lg rounded-lg" type="text" name="phone_number" :value="old('phone_number')" placeholder="Phone Number" required autofocus />
+            <input id="phone_number" class="input input-ghost w-full border-2 border-white p-4 text-lg rounded-lg" type="tel" name="phone_number" :value="old('phone_number')" placeholder="Phone Number" required autofocus />
           </div>
 
           <div class="pb-2 pt-4">
@@ -111,11 +111,11 @@
           </div>
 
           <div class="pb-2 pt-4">
-            <input id="postal_code" class="input input-ghost w-full border-2 border-white p-4 text-lg rounded-lg" type="text" name="state" :value="old('postal_code')" placeholder="Postal Code" required autofocus />
+            <input id="postal_code" class="input input-ghost w-full border-2 border-white p-4 text-lg rounded-lg" type="text" name="postal_code" :value="old('postal_code')" placeholder="Postal Code" required autofocus />
           </div>
 
           <div class="pb-2 pt-4">
-            <select id="type" class="select select-ghost w-full border-2 border-white text-lg rounded-lg text-gray-100" name="gender" :value="old('gender')" required autofocus>
+            <select id="type" class="select select-ghost w-full border-2 border-white text-lg rounded-lg text-gray-100" name="type" :value="old('type')" required autofocus>
               <option disabled selected>Pick your participation type</option>
               <option value="Internal">Internal Participant</option>
               <option value="External">External Participant</option>

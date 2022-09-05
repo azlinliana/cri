@@ -9,6 +9,11 @@ use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\Account\UserController;
+use App\Http\Controllers\Account\SuperAdminController;
+use App\Http\Controllers\Account\AdminController;
+use App\Http\Controllers\Account\JurorController;
+use App\Http\Controllers\Account\ParticipantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,3 +87,12 @@ Route::middleware('auth')->group(function () {
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
 });
+
+/*
+|--------------------------------------------------------------------------
+| Manage Account
+|--------------------------------------------------------------------------
+| -
+|--------------------------------------------------------------------------
+*/
+Route::get('/dashboard', [UserController::class, 'dashboard'])->middleware(['auth', 'verified'])-> name('dashboard');

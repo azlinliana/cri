@@ -4,9 +4,37 @@ namespace App\Http\Controllers\Account;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+use App\Models\User;
+use App\Models\Participant;
+use App\Models\Juror;
+use App\Models\Admin;
 
 class UserController extends Controller
 {
+    public function dashboard() {
+        if (Auth::check() && Auth::user()->hasRole('superadmin')) {
+            return view('account.superadmin.dashboard');
+        }
+        else if (Auth::check() && Auth::user()->hasRole('admin')) {
+            return view('account.admin.dashboard');
+        }
+        else if (Auth::check() && Auth::user()->hasRole('juror')) {
+            if ($user->juror->status == 'approved') {
+                return view('account.juror.dashboard');
+            }
+            else {
+                return redirect()->back();
+            }
+        }
+        else if (Auth::check() && Auth::user()->hasRole('participant')) {
+            return view('account.participant.dashboard');
+        } 
+        else {
+            return redirect()->route('login');
+        }
+    }
     /**
      * Display a listing of the resource.
      *

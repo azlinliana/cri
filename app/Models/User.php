@@ -20,9 +20,14 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'title_user',
+        'fullname',
+        'gender',
+        'phone_number',
         'email',
         'password',
+        'avatar_image',
+        'cover_image',
     ];
 
     /**
@@ -43,4 +48,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function superadmin() {
+        return $this->hasOne(SuperAdmin::class);
+    }
+
+    public function admin() {
+        return $this->hasOne(Admin::class);
+    }
+
+    public function juror() {
+        return $this->hasOne(Juror::class);
+    }
+
+    public function participant() {
+        return $this->hasOne(Participant::class);
+    }
 }
