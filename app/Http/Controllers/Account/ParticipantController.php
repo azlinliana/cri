@@ -7,6 +7,17 @@ use Illuminate\Http\Request;
 
 class ParticipantController extends Controller
 {
+    public function profile() {
+        return view('account.participant.profile');
+    }
+
+    public function list() {
+        return view('account.participant.list');
+    }
+
+    public function grid() {
+        return view('account.participant.grid');
+    }
     /**
      * Display a listing of the resource.
      *

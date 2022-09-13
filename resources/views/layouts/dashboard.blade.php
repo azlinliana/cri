@@ -25,47 +25,146 @@
   <body class="m-0 font-sans antialiased font-normal text-base leading-default bg-gray-50 text-slate-500">
     <div class="min-h-screen flex flex-col flex-auto flex-shrink-0">
       <div class="drawer drawer-mobile">
-        <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+        <input id="dashboard-drawer" type="checkbox" class="drawer-toggle" />
         
         <div class="drawer-content flex flex-col">
-          <!-- Header -->
+          <!-- Navbar -->
+          <div class="navbar bg-transparent">
+            <div class="flex-1">
+              <label for="dashboard-drawer" class="btn btn-ghost btn-circle lg:hidden">
+                <i class="fa-solid fa-bars fa-lg"></i>
+              </label>
+      
+              <div class="normal-case text-2xl font-semibold text-black ml-5">@yield('pageTitle')</div>
+            </div>
+      
+            <div class="flex-none mr-4">
+              <div class="hidden md:block">
+                <form method="POST" action="" id="display_search_form" style="display: none" class="mr-2">
+                  @csrf
+      
+                  <input type="text" name="" placeholder="Search here" class="input input-bordered w-full max-w-xs rounded-full focus:border-rose-600 transition" />
+                </form>
+              </div>
+      
+              <button class="btn btn-ghost btn-circle hidden sm:block" id="show_search">
+                <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+              </button>
+      
+              <div class="dropdown dropdown-end">
+                <label tabindex="0" class="btn btn-ghost btn-circle">
+                  <i class="fa-solid fa-calendar fa-lg"></i>
+                </label>
+                
+                <div tabindex="0" class="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow">
+                  <div class="card-body">
+                    <span class="font-bold text-lg">8 Items</span>
+                    <span class="text-info">Subtotal: $999</span>
+                    <div class="card-actions">
+                      <button class="btn btn-primary btn-block">View cart</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-          <!-- Main Content -->
+              <div class="dropdown dropdown-end">
+                <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+                  <div class="w-10 rounded-full">
+                    <img src="https://placeimg.com/80/80/people" />
+                  </div>
+                </label>
+  
+                <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                  <li>
+                    <a> Profile</a>
+                  </li>
+                  <li>
+                    <form method="POST" action="{{ route('logout') }}">
+                      @csrf
+      
+                      <a :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();">Logout</a>
+                    </form>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="flex flex-initial mt-8 mr-5 ml-5">
+            @yield('content')
+          </div>
         </div>
-
+  
         <div class="drawer-side">
-          <label for="my-drawer-2" class="drawer-overlay"></label>
+          <label for="dashboard-drawer" class="drawer-overlay"></label>
+  
+          <ul class="menu p-4 overflow-y-auto w-72 bg-base-100 space-y-2 tracking-wide">
+            @if (Auth::user()->hasRole('superadmin'))
+              <li>
+                <a href="{{ route('dashboard') }}" aria-label="dashboard" class="relative px-4 py-3 flex items-center space-x-4 rounded-md {{ Route::currentRouteName() == 'dashboard' ? 'text-white bg-gradient-to-r from-rose-700 to-rose-200' : 'text-gray-600 group' }}">
+                  <i class="fa-solid fa-house-chimney"></i>
+                  <span class="-mr-1 font-medium">Dashboard.</span>
+                </a>
+              </li>
 
-          <ul class="menu p-4 overflow-y-auto w-72 bg-base-100 space-y-2 tracking-wide mb-4">
+              <div class="pl-6 pt-4 ml-2 font-bold leading-tight uppercase text-xs opacity-60">Manage Account</div>
+              <li>
+                <a href="{{ route('superadmin.profile') }}" aria-label="profile" class="relative px-4 py-3 flex items-center space-x-4 rounded-md {{ Route::currentRouteName() == 'superadmin.profile' ? 'text-white bg-gradient-to-r from-rose-700 to-rose-200' : 'text-gray-600 group' }}">
+                  <i class="fa-solid fa-address-card"></i>
+                  <span class="group-hover:text-gray-700">Profile</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="{{ route('users.index') }}" aria-label="profile" class="relative px-4 py-3 flex items-center space-x-4 rounded-md {{ Route::currentRouteName() == 'users.index' ? 'text-white bg-gradient-to-r from-rose-700 to-rose-200' : 'text-gray-600 group' }}">
+                  <i class="fa-solid fa-users-rectangle"></i>
+                  <span class="group-hover:text-gray-700">Users Account</span>
+                </a>
+              </li>
+
+              <div class="pl-6 pt-4 ml-2 font-bold leading-tight uppercase text-xs opacity-60">Manage Project</div>
+              <li>
+                <a href="#" aria-label="profile" class="relative px-4 py-3 flex items-center space-x-4 rounded-md {{ Route::currentRouteName() == '' ? 'text-white bg-gradient-to-r from-rose-700 to-rose-200' : 'text-gray-600 group' }}">
+                  <i class="fa-solid fa-file-circle-plus"></i>
+                  <span class="group-hover:text-gray-700">Project Entry</span>
+                </a>
+              </li>
+    
+              <li>
+                <a href="#" aria-label="profile" class="relative px-4 py-3 flex items-center space-x-4 rounded-md {{ Route::currentRouteName() == '' ? 'text-white bg-gradient-to-r from-rose-700 to-rose-200' : 'text-gray-600 group' }}">
+                  <i class="fa-solid fa-file-circle-check"></i>
+                  <span class="group-hover:text-gray-700">Project Submission</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" aria-label="profile" class="relative px-4 py-3 flex items-center space-x-4 rounded-md {{ Route::currentRouteName() == '' ? 'text-white bg-gradient-to-r from-rose-700 to-rose-200' : 'text-gray-600 group' }}">
+                  <i class="fa-solid fa-list-check"></i>
+                  <span class="group-hover:text-gray-700">Project Evaluation</span>
+                </a>
+              </li>
+    
+              <div class="pl-6 pt-4 ml-2 font-bold leading-tight uppercase text-xs opacity-60">Manage Payment</div>
+              <li>
+                <a href="#" aria-label="profile" class="relative px-4 py-3 flex items-center space-x-4 rounded-md {{ Route::currentRouteName() == '' ? 'text-white bg-gradient-to-r from-rose-700 to-rose-200' : 'text-gray-600 group' }}">
+                  <i class="fa-solid fa-credit-card"></i>
+                  <span class="group-hover:text-gray-700">Project Payment</span>
+                </a>
+              </li>
+            @endif
+
+            @if (Auth::user()->hasRole('admin'))
+            @endif
+
+            @if (Auth::user()->hasRole('juror'))
+            @endif
+
+            @if (Auth::user()->hasRole('participant'))
+            @endif
           </ul>
         </div>
       </div>
     </div>
-    <!-- -->
-    </div>
-
-    <!-- Search form -->
-    <script type="text/javascript">
-      const btnSearch = document.getElementById('show_search');
-
-      btnSearch.addEventListener('click', () => {
-        const search_form = document.getElementById('display_search_form');
-
-        if (search_form.style.display === 'none') {
-          search_form.style.display = 'block';
-        } else {
-          search_form.style.display = 'none';
-        }
-      });
-    </script>
-
-    <!-- plugin for charts  -->
-    <script src="../assets/js/plugins/chartjs.min.js" async></script>
-    <!-- plugin for scrollbar  -->
-    <script src="../assets/js/plugins/perfect-scrollbar.min.js" async></script>
-    <!-- github button -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <!-- main script file  -->
-    <script src="../assets/js/soft-ui-dashboard.js?v=1.0.4" async></script>
   </body>
 </html>

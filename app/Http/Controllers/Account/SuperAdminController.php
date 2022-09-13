@@ -7,6 +7,17 @@ use Illuminate\Http\Request;
 
 class SuperAdminController extends Controller
 {
+    public function profile() {
+        return view('account.superadmin.profile');
+    }
+
+    public function list() {
+        return view('account.superadmin.list');
+    }
+
+    public function grid() {
+        return view('account.superadmin.grid');
+    }
     /**
      * Display a listing of the resource.
      *

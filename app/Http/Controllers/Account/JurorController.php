@@ -7,6 +7,17 @@ use Illuminate\Http\Request;
 
 class JurorController extends Controller
 {
+    public function profile() {
+        return view('account.juror.profile');
+    }
+
+    public function list() {
+        return view('account.juror.list');
+    }
+
+    public function grid() {
+        return view('account.juror.grid');
+    }
     /**
      * Display a listing of the resource.
      *

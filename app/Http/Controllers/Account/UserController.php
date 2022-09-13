@@ -35,14 +35,9 @@ class UserController extends Controller
             return redirect()->route('login');
         }
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+    
+    public function index() {
+        return view('account.users.index');
     }
 
     /**

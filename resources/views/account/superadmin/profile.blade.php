@@ -1,7 +1,7 @@
 <x-dashboard-layout>
-  @section('pageTitle', 'Dashboard.')
+  @section('pageTitle', 'Profile.')
 
   @section('content')
-    Dashboard coming soon
+    Profile coming soon
   @endsection
 </x-dashboard-layout>

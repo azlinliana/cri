@@ -92,7 +92,52 @@ Route::middleware('auth')->group(function () {
 |--------------------------------------------------------------------------
 | Manage Account
 |--------------------------------------------------------------------------
-| -
+| - Dashboard
+| - Profile
 |--------------------------------------------------------------------------
 */
+
 Route::get('/dashboard', [UserController::class, 'dashboard'])->middleware(['auth', 'verified'])-> name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::prefix('/account')->group(function () {
+        Route::get('/superadmin-profile', [SuperAdminController::class, 'profile'])
+                    ->name('superadmin.profile');
+
+        Route::get('/admin-profile', [AdminController::class, 'profile'])
+                    ->name('admin.profile');
+
+        Route::get('/juror-profile', [JurorController::class, 'profile'])
+                    ->name('juror.profile');
+
+        Route::get('/participant-profile', [ParticipantController::class, 'profile'])
+                    ->name('participant.profile');
+
+        Route::get('/users-index', [UserController::class, 'index'])
+                    ->name('users.index');
+
+        Route::get('/superadmin-list', [SuperAdminController::class, 'list'])
+                    ->name('superadmin.list');
+
+        Route::get('/admin-list', [AdminController::class, 'list'])
+                    ->name('admin.list');
+
+        Route::get('/juror-list', [JurorController::class, 'list'])
+                    ->name('juror.list');
+
+        Route::get('/participant-list', [ParticipantController::class, 'list'])
+                    ->name('participant.list');
+
+        Route::get('/superadmin-grid', [SuperAdminController::class, 'grid'])
+                    ->name('superadmin.grid');
+
+        Route::get('/admin-grid', [AdminController::class, 'grid'])
+                    ->name('admin.grid');
+
+        Route::get('/juror-grid', [JurorController::class, 'grid'])
+                    ->name('juror.grid');
+
+        Route::get('/participant-grid', [ParticipantController::class, 'grid'])
+                    ->name('participant.grid');
+    });    
+});
