@@ -41,19 +41,19 @@
         </div>
 
         <div class="flex items-center">
-          <a href="{{ route('participant.list.all') }}" class="rounded-full focus:outline-none focus:ring-2 focus:bg-rose-50 focus:ring-rose-800">
+          <a href="{{ route('participant.grid.all') }}" class="rounded-full focus:outline-none focus:ring-2 focus:bg-rose-50 focus:ring-rose-800">
             <div class="py-2 lg:px-8 px-4 text-gray-600 hover:text-rose-700 hover:bg-rose-100 rounded-full">
               <p>All</p>
             </div>
           </a>
 
-          <a href="{{ route('participant.list.internal') }}" class="rounded-full focus:outline-none focus:ring-2 focus:bg-rose-50 focus:ring-rose-800 ml-4 sm:ml-8">
+          <a href="{{ route('participant.grid.internal') }}" class="rounded-full focus:outline-none focus:ring-2 focus:bg-rose-50 focus:ring-rose-800 ml-4 sm:ml-8">
             <div class="py-2 lg:px-8 px-4 text-gray-600 hover:text-rose-700 hover:bg-rose-100 rounded-full">
               <p>Internal</p>
             </div>
           </a>
           
-          <a href="{{ route('participant.list.external') }}" class="rounded-full focus:outline-none focus:ring-2 focus:bg-rose-50 focus:ring-rose-800 ml-4 sm:ml-8">
+          <a href="{{ route('participant.grid.external') }}" class="rounded-full focus:outline-none focus:ring-2 focus:bg-rose-50 focus:ring-rose-800 ml-4 sm:ml-8">
             <div class="py-2 lg:px-8 px-4 bg-rose-100 text-rose-700 rounded-full">
               <p>External</p>
             </div>
