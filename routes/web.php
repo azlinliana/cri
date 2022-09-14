@@ -119,25 +119,46 @@ Route::middleware('auth')->group(function () {
         Route::get('/superadmin-list', [SuperAdminController::class, 'list'])
                     ->name('superadmin.list');
 
+        Route::get('/superadmin-grid', [SuperAdminController::class, 'grid'])
+                    ->name('superadmin.grid');
+
         Route::get('/admin-list', [AdminController::class, 'list'])
                     ->name('admin.list');
+
+        Route::get('/admin-grid', [AdminController::class, 'grid'])
+        ->name('admin.grid');
 
         Route::get('/juror-list', [JurorController::class, 'list'])
                     ->name('juror.list');
 
-        Route::get('/participant-list', [ParticipantController::class, 'list'])
-                    ->name('participant.list');
-
-        Route::get('/superadmin-grid', [SuperAdminController::class, 'grid'])
-                    ->name('superadmin.grid');
-
-        Route::get('/admin-grid', [AdminController::class, 'grid'])
-                    ->name('admin.grid');
-
         Route::get('/juror-grid', [JurorController::class, 'grid'])
                     ->name('juror.grid');
 
-        Route::get('/participant-grid', [ParticipantController::class, 'grid'])
-                    ->name('participant.grid');
+        Route::get('/participant-list-all', [ParticipantController::class, 'listAll'])
+                    ->name('participant.list.all');
+
+        Route::get('/participant-list-internal', [ParticipantController::class, 'listInternal'])
+                    ->name('participant.list.internal');
+
+        Route::get('/participant-list-external', [ParticipantController::class, 'listExternal'])
+                    ->name('participant.list.external');
+
+        Route::get('/participant-grid-all', [ParticipantController::class, 'gridAll'])
+                    ->name('participant.grid.all');
+
+        Route::get('/participant-grid-internal', [ParticipantController::class, 'gridInternal'])
+                    ->name('participant.grid.internal');
+
+        Route::get('/participant-grid-external', [ParticipantController::class, 'gridExternal'])
+                    ->name('participant.grid.external');
+
+        Route::get('/participant-show', [ParticipantController::class, 'show'])
+                    ->name('participant.show');
+
+        Route::get('/participant-list-search', [ParticipantController::class, 'searchList'])
+                    ->name('participant.list.search');
+
+        Route::get('/participant-grid-search', [ParticipantController::class, 'searchGrid'])
+                    ->name('participant.grid.search');
     });    
 });

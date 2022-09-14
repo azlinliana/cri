@@ -125,7 +125,7 @@
           </div>
         </a>
 
-        <a href="{{ route('participant.list') }}">
+        <a href="{{ route('participant.list.all') }}">
           <div class="relative bg-white py-6 px-6 rounded-3xl w-64 my-4 shadow-xl hover:bg-gray-100">
             <div class=" text-white flex items-center absolute rounded-full py-4 px-4 shadow-xl bg-orange-500 left-4 -top-6">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">

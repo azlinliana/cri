@@ -1,33 +1,49 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'CRI-UMK') }}</title>
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/bce1720c36.js" crossorigin="anonymous"></script>
 
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-        <script src="{{ mix('js/app.js') }}" defer></script>
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
+    <!-- Popper -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
 
-            <!-- Page Heading -->
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
+    <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
-    </body>
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <script src="{{ mix('js/app.js') }}" defer></script>
+  </head>
+    
+  <body class="font-sans antialiased">
+    <div class="min-h-screen bg-gray-100">
+      <main>
+        {{ $slot }}
+      </main>
+    </div>
+
+    <script type="text/javascript">
+      document.querySelector('.checkAll').addEventListener('click', e => {
+        if (e.target.value == 'Check All') {
+          document.querySelectorAll('.check-items input').forEach(checkbox => {
+            checkbox.checked = true;
+          });
+          e.target.value = 'Uncheck All';
+        } 
+        else {
+          document.querySelectorAll('.check-items input').forEach(checkbox => {
+            checkbox.checked = false;
+          });
+          e.target.value = 'Check All';
+        }
+      });
+    </script>
+  </body>
 </html>
