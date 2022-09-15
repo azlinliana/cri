@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Account;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Pagination\Paginator;
+
+use App\Models\User;
 
 class SuperAdminController extends Controller
 {
@@ -12,12 +16,39 @@ class SuperAdminController extends Controller
     }
 
     public function list() {
-        return view('account.superadmin.list');
+        if (Auth::check() && (Auth::user()->hasRole('superadmin'))) {
+            $superadmins = User::join('role_user', [['users.id', 'role_user.user_id']])
+                ->where('role_id', '1')
+                ->paginate(5);
+
+            $countSuperadmin =  $superadmins->count();
+
+            $currentUser = Auth::user()->id;
+
+            return view('account.superadmin.list', compact('superadmins', 'countSuperadmin', 'currentUser'));
+        }
+        else {
+            return redirect()->route('login');
+        }
     }
 
     public function grid() {
-        return view('account.superadmin.grid');
+        if (Auth::check() && (Auth::user()->hasRole('superadmin'))) {
+            $superadmins = User::join('role_user', [['users.id', 'role_user.user_id']])
+                ->where('role_id', '1')
+                ->paginate(5);
+
+            $countSuperadmin =  $superadmins->count();
+
+            $currentUser = Auth::user()->id;
+
+            return view('account.superadmin.grid', compact('superadmins', 'countSuperadmin', 'currentUser'));
+        }
+        else {
+            return redirect()->route('login');
+        }
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -45,17 +76,6 @@ class SuperAdminController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
     {
         //
     }

@@ -110,7 +110,7 @@
               {{ $participants->links() }}
             </div>
           </footer>
-      </section>
+        </section>
       @endsection
     </x-drawer.drawer-superadmin>
   @endif
