@@ -120,6 +120,7 @@ class ParticipantController extends Controller
                 ->orWhere('title_user', 'LIKE', "%{$search}%")
                 ->orWhere('fullname', 'LIKE', "%{$search}%")
                 ->orWhere('gender', 'LIKE', "%{$search}%")
+                ->orWhere('phone_number', 'LIKE', "%{$search}%")
                 ->orWhere('email', 'LIKE', "%{$search}%")
                 ->orWhere('organization', 'LIKE', "%{$search}%")
                 ->orWhere('faculty', 'LIKE', "%{$search}%")

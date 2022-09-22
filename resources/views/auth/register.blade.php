@@ -116,7 +116,7 @@
 
           <div class="pb-2 pt-4">
             <select id="type" class="select select-ghost w-full border-2 border-white text-lg rounded-lg text-gray-100" name="type" :value="old('type')" required autofocus>
-              <option disabled selected>Pick your participation type</option>
+              <option disabled selected>Pick your gender</option>
               <option value="Internal">Internal Participant</option>
               <option value="External">External Participant</option>
             </select>
@@ -137,8 +137,8 @@
               />
 
               <span class="absolute inset-y-0 right-0 flex items-center pr-3">
-                <i class="fa-regular fa-eye" @click="show = !show" :class="{'hidden': !show, 'block':show }" style="color:black;"></i>
-                <i class="fa-regular fa-eye-slash" @click="show = !show" :class="{'block': !show, 'hidden':show }" style="color:black;"></i>
+                <i class="fa-regular fa-eye-slash" @click="show = !show" :class="{'hidden': !show, 'block':show }" style="color:black;"></i>
+                <i class="fa-regular fa-eye" @click="show = !show" :class="{'block': !show, 'hidden':show }" style="color:black;"></i>
               </span>
             </label>
           </div>
@@ -154,8 +154,10 @@
               />
 
               <span class="absolute inset-y-0 right-0 flex items-center pr-3">
-                <i class="fa-regular fa-eye" @click="show = !show" :class="{'hidden': !show, 'block':show }" style="color:black;"></i>
-                <i class="fa-regular fa-eye-slash" @click="show = !show" :class="{'block': !show, 'hidden':show }" style="color:black;"></i>
+                <span class="absolute inset-y-0 right-0 flex items-center pr-3">
+                  <i class="fa-regular fa-eye-slash" @click="show = !show" :class="{'hidden': !show, 'block':show }" style="color:black;"></i>
+                  <i class="fa-regular fa-eye" @click="show = !show" :class="{'block': !show, 'hidden':show }" style="color:black;"></i>
+                </span>
               </span>
             </label>
           </div>

@@ -128,8 +128,8 @@
               />
 
               <span class="absolute inset-y-0 right-0 flex items-center pr-3">
-                <i class="fa-regular fa-eye" @click="show = !show" :class="{'hidden': !show, 'block':show }" style="color:black;"></i>
-                <i class="fa-regular fa-eye-slash" @click="show = !show" :class="{'block': !show, 'hidden':show }" style="color:black;"></i>
+                <i class="fa-regular fa-eye-slash" @click="show = !show" :class="{'hidden': !show, 'block':show }" style="color:black;"></i>
+                <i class="fa-regular fa-eye" @click="show = !show" :class="{'block': !show, 'hidden':show }" style="color:black;"></i>
               </span>
             </label>
           </div>

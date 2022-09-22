@@ -4,7 +4,7 @@
       @section('pageTitle', 'Search Results')
 
       @section('content')
-        <form method="GET" action="{{ route('participant.list.search') }}">
+        <form method="GET" action="{{ route('admin.search.list') }}">
           @csrf
 
           <div class="flex items-center mb-4">   
@@ -50,18 +50,14 @@
                             </th>
   
                             <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-center">
-                              Type
-                            </th>
-  
-                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-center">
                               Action
                             </th>
                           </tr>
                         </thead>
   
                         <tbody>
-                          @if ($queryParticipants != null)
-                            @foreach ($queryParticipants as $participant)
+                          @if ($queryAdmins != null)
+                            @foreach ($queryAdmins as $admin)
                               <tr class="border-b">
                                 <td class="text-sm text-gray-900 font-semibold px-6 py-4 whitespace-nowrap">
                                   {{ $loop->iteration }}
@@ -72,38 +68,28 @@
                                     <div class="avatar"><div class="mask mask-squircle w-12 h-12"><img src="https://api.lorem.space/image/face?hash=3174" /></div></div>
 
                                     <div>
-                                      <div class="font-bold">{{ $participant->title_user }} {{ $participant->fullname }}</div>
+                                      <div class="font-bold">{{ $admin->title_user }} {{ $admin->fullname }}</div>
 
-                                      <div class="text-sm opacity-50">{{ $participant->email }}</div>
+                                      <div class="text-sm opacity-50">{{ $admin->email }}</div>
                                     </div>
                                   </div>
                                 </td>
 
                                 <td class="text-sm text-gray-900 font-normal px-6 py-4 whitespace-nowrap">
-                                  {{ $participant->organization }}
+                                  {{ $admin->organization }}
                                 </td>
 
                                 <td class="text-sm text-gray-900 font-normal px-6 py-4 whitespace-nowrap">
-                                  {{ $participant->faculty }}
-                                </td>
-
-                                <td class="text-sm text-gray-900 font-bold px-6 py-4 whitespace-nowrap">
-                                  @if ($participant->type == 'Internal')
-                                    <div class="py-3 px-3 text-sm text-center leading-none text-rose-700 bg-rose-100 rounded">{{ $participant->type }}</div>
-                                  @endif
-      
-                                  @if ($participant->type == 'External')
-                                    <div class="py-3 px-3 text-sm text-center leading-none text-rose-50 bg-rose-400 rounded">{{ $participant->type }}</div>
-                                  @endif
+                                  {{ $admin->faculty }}
                                 </td>
 
                                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                   <div class="flex space-x-2 justify-center">
                                     <div class="tooltip" data-tip="View">
                                       <div type="button" class="text-rose-500 border border-rose-400 hover:bg-rose-400 hover:text-white focus:ring-4 focus:outline-none focus:ring-rose-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:border-rose-500 dark:text-rose-500 dark:hover:text-white dark:focus:ring-rose-600">
-                                        <a href="{{ route('participant.show', [$participant]) }}"><i class="fa-solid fa-eye"></i></a>
+                                        <a href="{{ route('admin.show', [$admin]) }}"><i class="fa-solid fa-eye"></i></a>
                                         
-                                        <span class="sr-only">View Participant</span>
+                                        <span class="sr-only">View Admin</span>
                                       </div>
                                     </div>
       
@@ -111,7 +97,7 @@
                                       <div type="button" class="text-rose-500 border border-rose-400 hover:bg-rose-400 hover:text-white focus:ring-4 focus:outline-none focus:ring-rose-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:border-rose-500 dark:text-rose-500 dark:hover:text-white dark:focus:ring-rose-600">
                                         <a href=""><i class="fa-solid fa-trash"></i></a>
 
-                                        <span class="sr-only">Delete Participant</span>
+                                        <span class="sr-only">Delete Admin</span>
                                       </div>
                                     </div>
                                   </div>
@@ -139,8 +125,5 @@
   @endif
 
   @if (Auth::user()->hasRole('admin'))
-  @endif
-
-  @if (Auth::user()->hasRole('participant'))
   @endif
 </x-app-layout>

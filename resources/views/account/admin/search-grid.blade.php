@@ -4,7 +4,7 @@
       @section('pageTitle', 'Search Results')
 
       @section('content')
-        <form method="GET" action="{{ route('participant.grid.search') }}">
+        <form method="GET" action="{{ route('admin.search.grid') }}">
           @csrf
 
           <div class="flex items-center mb-4">   
@@ -26,8 +26,8 @@
 
           <section class="mx-auto py-12">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              @if ($queryParticipants != null)
-                @foreach ($queryParticipants as $participant)
+              @if ($queryAdmins != null)
+                @foreach ($queryAdmins as $admin)
                   <div class="w-full bg-white rounded-lg p-12 flex flex-col justify-center items-center shadow-xl">
                     <div class="w-full inline-block mb-2 ml-4">
                       <div class="text-right">
@@ -37,7 +37,7 @@
                           </label>
   
                           <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                            <li><a href="{{ route('participant.show', [$participant]) }}">View</a></li>
+                            <li><a href="{{ route('admin.show', [$admin]) }}">View</a></li>
                             <li><a href="">Delete</a></li>
                           </ul>
                         </div>
@@ -49,18 +49,14 @@
                     </div>
   
                     <div class="text-center">
-                      <p class="text-xl text-gray-700 font-bold mb-2">{{ $participant->title_user }} {{ $participant->fullname }}</p>
-                      <p class="text-base text-gray-400 font-normal">{{ $participant->email }}</p>
-                      <p class="text-base text-gray-700 font-normal mt-2">{{ $participant->faculty }} - {{ $participant->organization }}</p>
-
-                      <div class="pt-4">
-                        @if ($participant->type == 'Internal')
-                          <div class="inline-block py-3 px-3 text-sm text-center font-semibold leading-none text-rose-700 bg-rose-100 rounded-full">{{ $participant->type }}</div>
-                        @endif
+                      <p class="text-xl text-gray-700 font-bold mb-2">{{ $admin->title_user }} {{ $admin->fullname }}</p>
+                      <p class="text-base text-gray-400 font-normal">{{ $admin->email }}</p>
   
-                        @if ($participant->type == 'External')
-                          <div class="inline-block py-3 px-3 text-sm text-center font-semibold leading-none text-rose-50 bg-rose-400 rounded-full">{{ $participant->type }}</div>
-                        @endif
+                      <div class="pt-4">
+                        <div class="pt-2">
+                          <p class="text-base text-gray-700 font-normal mb-2">{{ $admin->faculty }} - {{ $admin->organization }}</p>
+                          <p class="text-base text-rose-500 font-normal mb-2"><i class="fa-regular fa-clock"></i><span class="pl-2">{{ $admin->created_at->format('l, d/m/y | h:i A') }}</span><p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -80,8 +76,5 @@
   @endif
 
   @if (Auth::user()->hasRole('admin'))
-  @endif
-
-  @if (Auth::user()->hasRole('participant'))
   @endif
 </x-app-layout>

@@ -87,6 +87,7 @@
                   <div class="text-center">
                     <p class="text-xl text-gray-700 font-bold mb-2">{{ $participant->user->title_user }} {{ $participant->user->fullname }}</p>
                     <p class="text-base text-gray-400 font-normal">{{ $participant->user->email }}</p>
+                    <p class="text-base text-gray-700 font-normal mt-2">{{ $participant->faculty }} - {{ $participant->organization }}</p>
 
                     <div class="pt-4">
                       <div class="inline-block py-3 px-3 text-sm text-center font-semibold leading-none text-rose-50 bg-rose-400 rounded-full">{{ $participant->type }}</div>

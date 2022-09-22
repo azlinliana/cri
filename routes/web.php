@@ -126,7 +126,21 @@ Route::middleware('auth')->group(function () {
                     ->name('admin.list');
 
         Route::get('/admin-grid', [AdminController::class, 'grid'])
-        ->name('admin.grid');
+                    ->name('admin.grid');
+
+        Route::get('/admin-search-list', [AdminController::class, 'searchList'])
+                    ->name('admin.search.list');
+
+        Route::get('/admin-search-grid', [AdminController::class, 'searchGrid'])
+                    ->name('admin.search.grid');
+
+        Route::get('/admin-create', [AdminController::class, 'create'])
+                    ->name('admin.create');
+
+        Route::post('/admin-create', [AdminController::class, 'store']);
+                    
+        Route::get('/admin-show', [AdminController::class, 'show'])
+                    ->name('admin.show');
 
         Route::get('/juror-list', [JurorController::class, 'list'])
                     ->name('juror.list');
