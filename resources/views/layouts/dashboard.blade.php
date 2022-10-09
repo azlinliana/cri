@@ -125,7 +125,7 @@
 
               <div class="pl-6 pt-4 ml-2 font-bold leading-tight uppercase text-xs opacity-60">Manage Project</div>
               <li>
-                <a href="#" aria-label="profile" class="relative px-4 py-3 flex items-center space-x-4 rounded-md {{ Route::currentRouteName() == '' ? 'text-white bg-gradient-to-r from-rose-700 to-rose-200' : 'text-gray-600 group' }}">
+                <a href="{{ route('superadmin.entryindex') }}" aria-label="profile" class="relative px-4 py-3 flex items-center space-x-4 rounded-md {{ Route::currentRouteName() == '' ? 'text-white bg-gradient-to-r from-rose-700 to-rose-200' : 'text-gray-600 group' }}">
                   <i class="fa-solid fa-file-circle-plus"></i>
                   <span class="group-hover:text-gray-700">Project Entry</span>
                 </a>

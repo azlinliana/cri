@@ -9,11 +9,9 @@
 
           <div class="-mx-3 md:flex mb-6">
             <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-              <label class="block uppercase tracking-wide text-grey-darker text-md font-semibold mb-2">
-                Title
-              </label>
+              <label for="title" class="block text-md font-normal text-gray-700 mb-2 text-lg mb-2">Title</label>
 
-              <select id="title_user" class="select appearance-none block w-full bg-white dark:bg-white text-grey-darker border border-gray rounded py-3 px-4 mb-3" name="title_user" :value="old('title_user')" required autofocus>
+              <select id="title_user" class="select w-full px-4 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-400 rounded ease-in-out m-0 mt-2 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none focus:border-2 mb-3" name="title_user" :value="old('title_user')" required autofocus>
                 <option disabled selected>Pick admin title</option>
                 <option value="Mr.">Mr.</option>
                 <option value="Mrs.">Mrs.</option>
@@ -22,11 +20,9 @@
             </div>
 
             <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-              <label class="block uppercase tracking-wide text-grey-darker text-md font-semibold mb-2">
-                Full Name
-              </label>
+              <label for="fullname" class="block text-md font-normal text-gray-700 mb-2 text-lg mb-2">Full Name</label>
 
-              <input id="fullname" type="text" name="fullname" class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3" placeholder="Admin's full name" :value="old('fullname')" required autofocus>
+              <input id="fullname" type="text" name="fullname" class="w-full px-5 py-2.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-400 rounded ease-in-out m-0 mt-2 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none focus:border-2 mb-3" placeholder="Admin's full name" :value="old('fullname')" required autofocus>
               
               <p class="text-red text-xs italic">As per IC.</p>
             </div>
@@ -34,11 +30,9 @@
 
           <div class="-mx-3 md:flex mb-6">
             <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-              <label class="block uppercase tracking-wide text-grey-darker text-md font-semibold mb-2">
-                Gender
-              </label>
+              <label for="gender" class="block text-md font-normal text-gray-700 mb-2 text-lg mb-2">Gender</label>
 
-              <select id="gender" class="select appearance-none block w-full bg-white dark:bg-white text-grey-darker border border-gray rounded py-2 px-4 mb-3" name="gender" :value="old('gender')" required autofocus>
+              <select id="gender" class="select w-full px-4 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-400 rounded ease-in-out m-0 mt-2 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none focus:border-2 mb-3" name="gender" :value="old('gender')" required autofocus>
                 <option disabled selected>Pick admin gender</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
@@ -46,33 +40,27 @@
             </div>
 
             <div class="md:w-1/2 px-3">
-              <label class="block uppercase tracking-wide text-grey-darker text-md font-semibold mb-2">
-                Phone Number
-              </label>
+              <label for="phone_number" class="block text-md font-normal text-gray-700 mb-2 text-lg mb-2">Phone Number</label>
 
-              <input id="phone_number" type="text" name="phone_number" class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3" placeholder="Admin's phone number" :value="old('phone_number')" required autofocus>
+              <input id="phone_number" type="text" name="phone_number" class="w-full px-5 py-2.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-400 rounded ease-in-out m-0 mt-2 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none focus:border-2 mb-3" placeholder="Admin's phone number" :value="old('phone_number')" required autofocus>
             </div>
           </div>
 
           <div class="-mx-3 md:flex mb-6">
             <div class="md:w-full px-3">
-              <label class="block uppercase tracking-wide text-grey-darker text-md font-semibold mb-2" for="grid-first-name">
-                Email
-              </label>
+              <label for="email" class="block text-md font-normal text-gray-700 mb-2 text-lg mb-2">Email</label>
 
-              <input id="email" type="email" name="email" class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3" placeholder="Admin's email" :value="old('email')" required autofocus>              
+              <input id="email" type="email" name="email" class="w-full px-5 py-2.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-400 rounded ease-in-out m-0 mt-2 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none focus:border-2 mb-3" placeholder="Admin's email" :value="old('email')" required autofocus>              
             </div>
           </div>
 
           <div class="-mx-3 md:flex mb-6">
             <div class="md:w-1/2 px-3 mb-6 md:mb-0" x-data="{ show: true }">
-              <label class="block uppercase tracking-wide text-grey-darker text-md font-semibold mb-2" for="grid-first-name">
-                Password
-              </label>
+              <label for="password" class="block text-md font-normal text-gray-700 mb-2 text-lg mb-2">Password</label>
 
               <label class="relative block">
                 <input id="password" 
-                  class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3" 
+                  class="w-full px-5 py-2.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-400 rounded ease-in-out m-0 mt-2 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none focus:border-2 mb-3" 
                   placeholder="Password" 
                   :type="show ? 'password' : 'text'"
                   name="password"
@@ -87,13 +75,11 @@
             </div>
 
             <div class="md:w-1/2 px-3" x-data="{ show: true }">
-              <label class="block uppercase tracking-wide text-grey-darker text-md font-semibold mb-2" for="grid-first-name">
-                Confirm Password
-              </label>
+              <label for="confirm_password" class="block text-md font-normal text-gray-700 mb-2 text-lg mb-2">Confirm Password</label>
 
               <label class="relative block">
                 <input id="password_confirmation" 
-                  class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3" 
+                  class="w-full px-5 py-2.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-400 rounded ease-in-out m-0 mt-2 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none focus:border-2 mb-3" 
                   placeholder="Confirm Password" 
                   :type="show ? 'password' : 'text'"
                   name="password_confirmation"
@@ -110,22 +96,22 @@
 
           <div class="-mx-3 md:flex mb-6">
             <div class="md:w-1/2 px-3 mb-6 md:mb-0">
-              <label class="block uppercase tracking-wide text-grey-darker text-md font-semibold mb-2" for="grid-first-name">
-                Organization
-              </label>
+              <label for="organization" class="block text-md font-normal text-gray-700 mb-2 text-lg mb-2">Organization</label>
 
-              <input id="organization" type="text" name="organization" class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3" placeholder="Admin's organization" :value="old('organization')" required autofocus>
+              <input id="organization" type="text" name="organization" class="w-full px-5 py-2.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-400 rounded ease-in-out m-0 mt-2 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none focus:border-2 mb-3" placeholder="Admin's organization" :value="old('organization')" required autofocus>
             </div>
             <div class="md:w-1/2 px-3">
-              <label class="block uppercase tracking-wide text-grey-darker text-md font-semibold mb-2" for="grid-first-name">
-                Faculty
-              </label>
+              <label for="faculty" class="block text-md font-normal text-gray-700 mb-2 text-lg mb-2">Faculty</label>
 
-              <input id="faculty" type="text" name="faculty" class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 mb-3" placeholder="Admin's faculty" :value="old('faculty')" required autofocus>
+              <input id="faculty" type="text" name="faculty" class="w-full px-5 py-2.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-400 rounded ease-in-out m-0 mt-2 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none focus:border-2 mb-3" placeholder="Admin's faculty" :value="old('faculty')" required autofocus>
             </div>
           </div>
 
-          <div class="flex items-center justify-end mt-4">
+          <div class="flex items-center justify-end mt-4 gap-4">
+            <div class="focus:ring-2 focus:ring-offset-2 focus:ring-zinc-600 mt-4 sm:mt-0 inline-flex items-start justify-start px-6 py-4 bg-zinc-200 hover:bg-zinc-100 focus:outline-none rounded-full">
+              <a href="javascript:history.back()"><p class="text-normal font-medium leading-none text-black">Back</p></a>
+            </div>
+  
             <button type="submit" class="focus:ring-2 focus:ring-offset-2 focus:ring-rose-600 mt-4 sm:mt-0 inline-flex items-start justify-start px-6 py-4 bg-rose-600 hover:bg-rose-400 focus:outline-none rounded-full">
               <p class="text-normal font-medium leading-none text-white">Create</p>
             </button>

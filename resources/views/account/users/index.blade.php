@@ -5,7 +5,7 @@
     <div class="flex items-center justify-center mx-auto pt-16">
       <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
         <a href="{{ route('superadmin.list') }}">
-          <div class="relative py-6 px-6 rounded-3xl w-64 my-4 shadow-xl border-1 hover:bg-gray-100">        
+          <div class="relative py-6 px-6 rounded-3xl w-64 my-4 shadow-xl border-1 hover:shadow-xl transform hover:scale-105 duration-500">        
             <div class=" text-white flex items-center absolute rounded-full py-4 px-4 shadow-xl bg-rose-600 left-4 -top-6">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                 <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
@@ -46,7 +46,7 @@
         </a>
 
         <a href="{{ route('admin.list') }}">
-          <div class="relative bg-white py-6 px-6 rounded-3xl w-64 my-4 shadow-xl hover:bg-gray-100">
+          <div class="relative bg-white py-6 px-6 rounded-3xl w-64 my-4 shadow-xl hover:shadow-xl transform hover:scale-105 duration-500">
             <div class=" text-white flex items-center absolute rounded-full py-4 px-4 shadow-xl bg-blue-800 left-4 -top-6">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                 <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
@@ -88,7 +88,7 @@
         </a>
 
         <a href="{{ route('juror.list') }}">
-          <div class="relative bg-white py-6 px-6 rounded-3xl w-64 my-4 shadow-xl hover:bg-gray-100">
+          <div class="relative bg-white py-6 px-6 rounded-3xl w-64 my-4 shadow-xl hover:shadow-xl transform hover:scale-105 duration-500">
             <div class=" text-white flex items-center absolute rounded-full py-4 px-4 shadow-xl bg-yellow-500 left-4 -top-6">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                 <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
@@ -126,7 +126,7 @@
         </a>
 
         <a href="{{ route('participant.list.all') }}">
-          <div class="relative bg-white py-6 px-6 rounded-3xl w-64 my-4 shadow-xl hover:bg-gray-100">
+          <div class="relative bg-white py-6 px-6 rounded-3xl w-64 my-4 shadow-xl hover:shadow-xl transform hover:scale-105 duration-500">
             <div class=" text-white flex items-center absolute rounded-full py-4 px-4 shadow-xl bg-orange-500 left-4 -top-6">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                 <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />

@@ -14,6 +14,8 @@ use App\Http\Controllers\Account\SuperAdminController;
 use App\Http\Controllers\Account\AdminController;
 use App\Http\Controllers\Account\JurorController;
 use App\Http\Controllers\Account\ParticipantController;
+use App\Http\Controllers\Entry\EntryController;
+use App\Http\Controllers\Entry\ClusterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -174,5 +176,34 @@ Route::middleware('auth')->group(function () {
 
         Route::get('/participant-grid-search', [ParticipantController::class, 'searchGrid'])
                     ->name('participant.grid.search');
+    });    
+});
+
+/*
+|--------------------------------------------------------------------------
+| Manage Project Entry
+|--------------------------------------------------------------------------
+| - Index
+|--------------------------------------------------------------------------
+*/
+
+Route::middleware('auth')->group(function () {
+    Route::prefix('/entry')->group(function () {
+        Route::get('/superadmin-index', [EntryController::class, 'index'])
+                    ->name('superadmin.entryindex');
+
+        Route::get('/superadmin-cluster-list', [ClusterController::class, 'list'])
+                    ->name('superadmin.cluster.list');
+
+        Route::post('/superadmin-cluster-list/{cluster}', [ClusterController::class, 'destroy'])
+                    ->name('superadmin.cluster.list.destroy');
+
+        Route::post('/superadmin-cluster-list', [ClusterController::class, 'store']);
+
+        Route::get('/superadmin-cluster-edit/{cluster}', [ClusterController::class, 'edit'])
+                    ->name('superadmin.cluster.edit');
+
+        Route::put('/superadmin-cluster-update/{cluster}', [ClusterController::class, 'update'])
+                    ->name('superadmin.cluster.update');
     });    
 });
