@@ -21,7 +21,7 @@ class UserController extends Controller
             return view('account.admin.dashboard');
         }
         else if (Auth::check() && Auth::user()->hasRole('juror')) {
-            if ($user->juror->status == 'approved') {
+            if (Auth::user()->juror->status == 'approved') {
                 return view('account.juror.dashboard');
             }
             else {

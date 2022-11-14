@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\Account\TitleController;
 use App\Http\Controllers\Account\UserController;
 use App\Http\Controllers\Account\SuperAdminController;
 use App\Http\Controllers\Account\AdminController;
@@ -103,6 +104,20 @@ Route::get('/dashboard', [UserController::class, 'dashboard'])->middleware(['aut
 
 Route::middleware('auth')->group(function () {
     Route::prefix('/account')->group(function () {
+        Route::get('/superadmin-title-user-list', [TitleController::class, 'list'])
+        ->name('superadmin.title-user.list');
+
+        Route::post('/superadmin-title-user-list/{titleUser}', [TitleController::class, 'destroy'])
+                ->name('superadmin.title-user.list.destroy');
+
+        Route::post('/superadmin-title-user-list', [TitleController::class, 'store']);
+
+        Route::get('/superadmin-title-user-edit/{titleUser}', [TitleController::class, 'edit'])
+                ->name('superadmin.title-user.edit');
+
+        Route::put('/superadmin-title-user-update/{titleUser}', [TitleController::class, 'update'])
+                ->name('superadmin.title-user.update');
+
         Route::get('/superadmin-profile', [SuperAdminController::class, 'profile'])
                     ->name('superadmin.profile');
 
@@ -144,11 +159,44 @@ Route::middleware('auth')->group(function () {
         Route::get('/admin-show', [AdminController::class, 'show'])
                     ->name('admin.show');
 
-        Route::get('/juror-list', [JurorController::class, 'list'])
-                    ->name('juror.list');
+        Route::get('/juror-list-all', [JurorController::class, 'listAll'])
+                    ->name('juror.list.all');
 
-        Route::get('/juror-grid', [JurorController::class, 'grid'])
-                    ->name('juror.grid');
+        Route::get('/juror-list-pending', [JurorController::class, 'listPending'])
+                    ->name('juror.list.pending');
+
+        Route::get('/juror-list-approved', [JurorController::class, 'listApproved'])
+                    ->name('juror.list.approved');
+
+        Route::get('/juror-list-rejected', [JurorController::class, 'listRejected'])
+                    ->name('juror.list.rejected');
+
+        Route::get('/juror-grid-all', [JurorController::class, 'gridAll'])
+                    ->name('juror.grid.all');
+                    
+        Route::get('/juror-grid-pending', [JurorController::class, 'gridPending'])
+                    ->name('juror.grid.pending');
+
+        Route::get('/juror-grid-approved', [JurorController::class, 'gridApproved'])
+                    ->name('juror.grid.approved');
+
+        Route::get('/juror-grid-rejected', [JurorController::class, 'gridRejected'])
+                    ->name('juror.grid.rejected');
+
+        Route::get('/juror-show/{juror}', [JurorController::class, 'show'])
+                    ->name('juror.show');
+
+        Route::get('/juror-edit/{juror}', [JurorController::class, 'edit'])
+                    ->name('juror.edit');
+
+        Route::put('/juror-update/{juror}', [JurorController::class, 'update'])
+                    ->name('juror.update');
+
+        Route::get('/juror-list-search', [ParticipantController::class, 'searchGrid'])
+                    ->name('juror.list.search');
+
+        Route::get('/juror-grid-search', [ParticipantController::class, 'searchGrid'])
+                    ->name('juror.grid.search');
 
         Route::get('/participant-list-all', [ParticipantController::class, 'listAll'])
                     ->name('participant.list.all');
@@ -177,6 +225,13 @@ Route::middleware('auth')->group(function () {
         Route::get('/participant-grid-search', [ParticipantController::class, 'searchGrid'])
                     ->name('participant.grid.search');
     });    
+});
+
+Route::middleware('guest')->group(function () {
+    Route::get('/juror-register', [JurorController::class, 'register'])
+        ->name('juror.register');
+
+    Route::post('/juror-register', [JurorController::class, 'store']);
 });
 
 /*

@@ -9,22 +9,23 @@
 
         <x-form-project-layout>
           <x-slot:secTitle>Project Clusters</x-slot:secTitle>
+          
           <x-slot:secDesc>This information will be displayed at landing page, for the juror to choose evaluation cluster and for the participant to choose project cluster.</x-slot:secDesc>
 
           <x-slot:formElement>
             <div class="grid grid-cols-3 gap-6">
               <div class="col-span-3">
-                <label for="cluster-name" class="block text-md font-normal text-gray-700">Cluster Name</label>
+                <label for="cluster-name" class="block text-md font-normal text-gray-700 mb-3">Cluster Name</label>
 
-                <input id="name" type="text" name="name" class="w-full px-4 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-400 rounded ease-in-out m-0 mt-2 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none focus:border-2" placeholder="Enter name of the cluster" value="{{ $cluster->name }}" required autofocus >
+                <input id="name" type="text" name="name" class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Enter name of the cluster" value="{{ $cluster->name }}" required autofocus >
               </div>
             </div>
 
             <div class="grid grid-cols-3 gap-6">
               <div class="col-span-3">
-                <label for="cluster-description" class="block text-md font-normal text-gray-700">Cluster Description</label>
+                <label for="cluster-description" class="block text-md font-normal text-gray-700 mb-3">Cluster Description</label>
 
-                <textarea id="description" name="description" class="w-full px-4 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-400 rounded ease-in-out m-0 mt-2 focus:text-gray-700 focus:bg-white focus:border-gray-600 focus:outline-none focus:border-2" placeholder="Enter description of the cluster" value="{{ $cluster->name }}" required autofocus>{{ $cluster->description }}</textarea>
+                <textarea id="description" name="description" class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Enter description of the cluster" value="{{ $cluster->description }}" required autofocus>{{ $cluster->description }}</textarea>
               </div>
             </div>
           </x-slot:FormElement>

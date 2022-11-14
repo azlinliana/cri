@@ -5,16 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cluster extends Model
+class ClusterJuror extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'description',
+        'juror_id',
+        'cluster_id',
     ];
-
-    public function jurors() {
-        return $this->belongsToMany(Juror::class);
-    }
 }

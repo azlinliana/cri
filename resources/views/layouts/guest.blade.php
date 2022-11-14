@@ -15,6 +15,7 @@
     
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <script src="{{ mix('js/app.js') }}" defer></script>
+    <script src="../path/to/flowbite/dist/flowbite.js"></script>
 
     <!-- Show/Hide password -->
     <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
@@ -146,7 +147,7 @@
       </footer>
     </div>
 
-    <script>
+    <script type="text/javascript">
       var scrollpos = window.scrollY;
       var header = document.getElementById("header");
       var navcontent = document.getElementById("nav-content");
@@ -192,7 +193,7 @@
       });
     </script>
   
-    <script>
+    <script type="text/javascript">
       /*Toggle dropdown list*/
       /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
       var navMenuDiv = document.getElementById("nav-content");
@@ -227,6 +228,25 @@
           t = t.parentNode;
         }
         return false;
+      }
+    </script>
+
+    <script type="text/javascript">
+      function checkSelection(j) {
+        var total=0;
+
+        for(var i=0; i < document.jurorRegisterForm.judging_preference.length; i++) {
+          if(document.jurorRegisterForm.judging_preference[i].checked){
+            total =total +1;
+          }
+          if(total > 3){
+            alert("Please Select only three");
+
+            document.jurorRegisterForm.judging_preference[j].checked = false ;
+
+            return false;
+          }
+        }
       }
     </script>
   </body>

@@ -45,5 +45,25 @@
         }
       });
     </script>
+
+    <script type="text/javascript">
+      let selectStatus = document.getElementById('status-list');
+    
+      selectStatus.addEventListener('change', (choosenValue) => {
+        if (choosenValue.target.value == 'rejected') {
+          document.getElementById('displayReasonField').style.display = 'block';
+          document.getElementById('displayReviewerSection').style.display = 'block';
+        } 
+        else if (choosenValue.target.value == 'approved') {
+          document.getElementById('displayReasonField').style.display = 'none';
+          document.getElementById('displayReviewerSection').style.display = 'block';
+        }
+        
+        else {
+          document.getElementById('displayReasonField').style.display = 'none';
+          document.getElementById('displayReviewerSection').style.display = 'none';
+        }
+      });
+    </script>
   </body>
 </html>
