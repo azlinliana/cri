@@ -37,7 +37,27 @@ class UserController extends Controller
     }
     
     public function index() {
-        return view('account.users.index');
+        if (Auth::user()->hasRole('superadmin') || Auth::user()->hasRole('admin')) {
+            $superadmins = User::all();
+            $countSuperAdmin = $superadmins->count();
+
+            $admins = Admin::all();
+            $countAdmin = $admins->count();
+
+            $jurors = Juror::all();
+            $countJuror = $jurors->count();
+
+            $pendingJurors = Juror::where('status', 'pending')->get();
+            $countPendingJuror = $pendingJurors->count();
+
+            $participants = Participant::all();
+            $countParticipant = $participants->count();
+
+            return view('account.users.index', compact('superadmins', 'countSuperAdmin','admins', 'countAdmin', 'jurors', 'pendingJurors', 'countPendingJuror', 'countJuror', 'participants', 'countParticipant'));
+        }
+        else {
+            return redirect()->route('login');
+        }
     }
 
     /**

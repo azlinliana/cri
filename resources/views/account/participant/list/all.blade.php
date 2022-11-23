@@ -141,7 +141,7 @@
                                     <div type="button" class="text-rose-500 border border-rose-400 hover:bg-rose-400 hover:text-white focus:ring-4 focus:outline-none focus:ring-rose-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:border-rose-500 dark:text-rose-500 dark:hover:text-white dark:focus:ring-rose-600">
                                       <a href="{{ route('participant.show', [$participant]) }}"><i class="fa-solid fa-eye"></i></a>
                                       
-                                      <span class="sr-only">View Admin</span>
+                                      <span class="sr-only">View Participant</span>
                                     </div>
                                   </div>
     
@@ -149,7 +149,7 @@
                                     <div type="button" class="text-rose-500 border border-rose-400 hover:bg-rose-400 hover:text-white focus:ring-4 focus:outline-none focus:ring-rose-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:border-rose-500 dark:text-rose-500 dark:hover:text-white dark:focus:ring-rose-600">
                                       <a href=""><i class="fa-solid fa-trash"></i></a>
 
-                                      <span class="sr-only">Delete Admin</span>
+                                      <span class="sr-only">Delete Participant</span>
                                     </div>
                                   </div>
                                 </div>

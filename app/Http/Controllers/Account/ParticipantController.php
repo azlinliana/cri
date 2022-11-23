@@ -94,11 +94,11 @@ class ParticipantController extends Controller
         }
     }
 
-    public function show(Request $request, Participant $participant) {
-        if (Auth::check() && (Auth::user()->hasRole('participant') || Auth::user()->hasRole('superadmin') || Auth::user()->hasRole('admin'))) {
+    public function show(Participant $participant) {
+        if (Auth::user()->hasRole('superadmin') || Auth::user()->hasRole('admin')) {
             $participants = Participant::all();
 
-            return view('account.participant.show');
+            return view('account.participant.show', compact('participant'));
         }
         else {
             return redirect()->route('login');

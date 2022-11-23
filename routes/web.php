@@ -216,7 +216,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/participant-grid-external', [ParticipantController::class, 'gridExternal'])
                     ->name('participant.grid.external');
 
-        Route::get('/participant-show', [ParticipantController::class, 'show'])
+        Route::get('/participant-show/{participant}', [ParticipantController::class, 'show'])
                     ->name('participant.show');
 
         Route::get('/participant-list-search', [ParticipantController::class, 'searchList'])

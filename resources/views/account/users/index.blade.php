@@ -29,7 +29,7 @@
                   <p class="font-semibold text-base mb-2">Total</p>
 
                   <div class="flex space-x-2">
-                    <p>2</p>
+                    <p class="font-bold text-rose-200 text-lg text-center">{{ $countSuperAdmin }}</p>
                   </div>
                 </div>
 
@@ -71,7 +71,7 @@
                   <p class="font-semibold text-base mb-2">Total</p>
 
                   <div class="flex space-x-2">
-                    <p>4</p>
+                    <p class="font-bold text-rose-200 text-lg text-center">{{ $countAdmin }}</p>
                   </div>
                 </div>
 
@@ -111,13 +111,14 @@
                 <div class="my-2">
                   <p class="font-semibold text-base mb-2">Total</p>
                   <div class="flex space-x-2">
+                    <p class="font-bold text-rose-200 text-lg text-center">{{ $countJuror }}</p>
                   </div>
                 </div>
 
                 <div class="my-2">
                   <p class="font-semibold text-base mb-2">Pending</p>
                   <div class="text-base text-gray-400 font-semibold">
-                    <p>4</p>
+                    <p class="font-bold text-amber-200 text-lg text-center">{{ $countPendingJuror }}</p>
                   </div>
                 </div>
               </div>
@@ -152,7 +153,7 @@
 
                   <div class="flex space-x-2">
                     <div class="text-base text-gray-400 font-semibold">
-                      <p>5</p>
+                      <p class="font-bold text-rose-200 text-lg">{{ $countParticipant }}</p>
                   </div>
                   </div>
                 </div>
