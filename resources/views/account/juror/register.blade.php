@@ -77,7 +77,7 @@
               <div class="md:w-1/2 px-3 mb-6 md:mb-0">
                 <label for="fullname" class="block text-md font-normal text-gray-700 mb-2 text-lg mb-2">Full Name</label>
 
-                <input id="fullname" type="text" name="fullname" class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Admin's full name" :value="old('fullname')" required autofocus>
+                <input id="fullname" type="text" name="fullname" class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Your full name" :value="old('fullname')" required autofocus>
               
                 <div class="text-sm italic text-gray-600 mt-1">**As per IC.</div>
               </div>
@@ -97,7 +97,7 @@
               <div class="md:w-1/2 px-3">
                 <label for="phone_number" class="block text-md font-normal text-gray-700 mb-2 text-lg mb-2">Phone Number</label>
 
-                <input id="phone_number" type="text" name="phone_number" class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Admin's phone number" :value="old('phone_number')" required autofocus>
+                <input id="phone_number" type="text" name="phone_number" class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Your phone number" :value="old('phone_number')" required autofocus>
               </div>
             </div>
 
@@ -105,7 +105,7 @@
               <div class="md:w-full px-3">
                 <label for="email" class="block text-md font-normal text-gray-700 mb-2 text-lg mb-2">Email</label>
 
-                <input id="email" type="email" name="email" class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Admin's email" :value="old('email')" required autofocus>              
+                <input id="email" type="email" name="email" class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Your email" :value="old('email')" required autofocus>              
               </div>
             </div>
 
@@ -153,13 +153,13 @@
               <div class="md:w-1/2 px-3 mb-6 md:mb-0">
                 <label for="organization" class="block text-md font-normal text-gray-700 mb-2 text-lg mb-2">Organization</label>
 
-                <input id="organization" type="text" name="organization" class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Admin's organization" :value="old('organization')" required autofocus>
+                <input id="organization" type="text" name="organization" class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Your organization" :value="old('organization')" required autofocus>
               </div>
 
               <div class="md:w-1/2 px-3">
                 <label for="faculty" class="block text-md font-normal text-gray-700 mb-2 text-lg mb-2">Faculty</label>
 
-                <input id="faculty" type="text" name="faculty" class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Admin's faculty" :value="old('faculty')" required autofocus>
+                <input id="faculty" type="text" name="faculty" class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Your faculty" :value="old('faculty')" required autofocus>
               </div>
             </div>
 

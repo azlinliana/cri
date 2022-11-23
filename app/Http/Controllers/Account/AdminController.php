@@ -151,9 +151,9 @@ class AdminController extends Controller
         }
     }
 
-    public function show() {
+    public function show(Admin $admin) {
         if (Auth::user()->hasRole('admin') || Auth::user()->hasRole('superadmin')) {
-            return view('account.admin.show');
+            return view('account.admin.show', compact('admin'));
         }
         else {
             return redirect()->route('login');

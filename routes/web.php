@@ -156,7 +156,7 @@ Route::middleware('auth')->group(function () {
 
         Route::post('/admin-create', [AdminController::class, 'store']);
                     
-        Route::get('/admin-show', [AdminController::class, 'show'])
+        Route::get('/admin-show/{admin}', [AdminController::class, 'show'])
                     ->name('admin.show');
 
         Route::get('/juror-list-all', [JurorController::class, 'listAll'])
