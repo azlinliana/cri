@@ -265,7 +265,6 @@ class JurorController extends Controller
 
     public function searchList(Request $request) {
         if (Auth::check() && (Auth::user()->hasRole('admin') || Auth::user()->hasRole('superadmin'))) {
-            dd($request);
             $request->validate([
                 'search' => ['required', 'string', 'max:255'],
             ]);

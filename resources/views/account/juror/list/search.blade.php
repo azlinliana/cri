@@ -77,9 +77,9 @@
                                     <div class="avatar"><div class="mask mask-squircle w-12 h-12"><img src="https://api.lorem.space/image/face?hash=3174" /></div></div>
   
                                     <div>
-                                      <div class="font-bold">{{ $juror->user->title_user }} {{ $juror->user->fullname }}</div>
+                                      <div class="font-bold">{{ $juror->title_user }} {{ $juror->fullname }}</div>
   
-                                      <div class="text-sm opacity-50">{{ $juror->user->email }}</div>
+                                      <div class="text-sm opacity-50">{{ $juror->email }}</div>
                                     </div>
                                   </div>
                                 </td>
@@ -149,63 +149,6 @@
   
                                         <span class="sr-only">Delete Admin</span>
                                       </div>
-                                    </div>
-                                  </div>
-                                </td>
-                              </tr>
-  
-                              <tr class="bg-white">
-                                <td colspan="7" class="py-4 px-6">
-                                  <div tabindex="0" class="collapse collapse-arrow border-b">
-                                    <div class="collapse-title"></div>
-  
-                                    <div class="collapse-content">
-                                      @if ($juror->status == 'pending')
-                                        <div class="bg-yellow-100 rounded-lg py-5 px-6 mb-3 text-base text-yellow-700 inline-flex items-center w-full" role="alert">
-                                          <i class="fa-solid fa-hourglass pr-2"></i>
-                                          Please evaluate the juror account request accordingly.
-                                        </div>
-                                      @endif
-  
-                                      @if ($juror->status == 'approved')
-                                        <div class="bg-green-100 rounded-lg py-5 px-6 mb-3 text-base text-green-700 inline-flex items-center w-full" role="alert">
-                                          <i class="fa-solid fa-person-circle-check pr-2"></i>
-                                          Approved account request.
-                                        </div>
-  
-                                        <div class="flex">
-                                          <div class="text-md font-bold text-gray-700 dark:bg-gray-700 dark:text-gray-400 mb-2">Reviewer:</div>
-  
-                                          <p class="mb-3 ml-3">
-                                            {{ $juror->reviewer }}
-                                          </p>
-                                        </div>
-                                      @endif
-  
-                                      @if ($juror->status == 'rejected')
-                                        <div class="bg-rose-100 rounded-lg py-5 px-6 mb-3 text-base text-rose-700 inline-flex items-center w-full" role="alert">
-                                          <i class="fa-solid fa-person-circle-xmark pr-2"></i>
-                                          Rejected account request.
-                                        </div>
-  
-                                        <div class="flex">
-                                          <div class="basis-1/2">
-                                            <div class="text-md font-bold text-gray-700 dark:bg-gray-700 dark:text-gray-400 mb-2">Reviewer:</div>
-  
-                                            <p class="mb-3">
-                                              {{ $juror->reviewer }}
-                                            </p>
-                                          </div>
-  
-                                          <div class="basis-1/2">
-                                            <div class="text-md font-bold text-gray-700 dark:bg-gray-700 dark:text-gray-400 mb-2">Rejected Reason:</div>
-  
-                                            <p class="mb-3">
-                                              {{ $juror->reason }}
-                                            </p>
-                                          </div>
-                                        </div>
-                                      @endif
                                     </div>
                                   </div>
                                 </td>

@@ -192,10 +192,10 @@ Route::middleware('auth')->group(function () {
         Route::put('/juror-update/{juror}', [JurorController::class, 'update'])
                     ->name('juror.update');
 
-        Route::get('/juror-list-search', [ParticipantController::class, 'searchGrid'])
+        Route::get('/juror-list-search', [JurorController::class, 'searchList'])
                     ->name('juror.list.search');
 
-        Route::get('/juror-grid-search', [ParticipantController::class, 'searchGrid'])
+        Route::get('/juror-grid-search', [JurorController::class, 'searchGrid'])
                     ->name('juror.grid.search');
 
         Route::get('/participant-list-all', [ParticipantController::class, 'listAll'])

@@ -4,7 +4,7 @@
       @section('pageTitle', 'Juror List')
 
       @section('content')
-        <form method="GET" action="">
+        <form method="GET" action="{{ route('juror.list.search') }}">
           @csrf
 
           <div class="flex items-center mb-4">   
