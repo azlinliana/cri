@@ -13,7 +13,14 @@ use App\Models\Participant;
 class ParticipantController extends Controller
 {
     public function profile() {
-        return view('account.participant.profile');
+        if (Auth::check() && Auth::user()->hasRole('participant')) {
+            $user = Auth::user();
+
+            return view('account.participant.profile', compact('user'));
+        }
+        else {
+            return redirect()->route('login');
+        }
     }
 
     public function listAll() {

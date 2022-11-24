@@ -155,6 +155,50 @@
             @endif
 
             @if (Auth::user()->hasRole('admin'))
+              <li>
+                <a href="{{ route('dashboard') }}" aria-label="dashboard" class="relative px-4 py-3 flex items-center space-x-4 rounded-md {{ Route::currentRouteName() == 'dashboard' ? 'text-white bg-gradient-to-r from-blue-700 to-blue-200' : 'text-gray-600 group' }}">
+                  <i class="fa-solid fa-house-chimney"></i>
+                  <span class="-mr-1 font-medium">Dashboard.</span>
+                </a>
+              </li>
+
+              <div class="pl-6 pt-4 ml-2 font-bold leading-tight uppercase text-xs opacity-60">Manage Account</div>
+              <li>
+                <a href="{{ route('admin.profile') }}" aria-label="profile" class="relative px-4 py-3 flex items-center space-x-4 rounded-md {{ Route::currentRouteName() == 'admin.profile' ? 'text-white bg-gradient-to-r from-blue-700 to-blue-200' : 'text-gray-600 group' }}">
+                  <i class="fa-solid fa-address-card"></i>
+                  <span class="group-hover:text-gray-700">Profile</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="{{ route('users.index') }}" aria-label="profile" class="relative px-4 py-3 flex items-center space-x-4 rounded-md {{ Route::currentRouteName() == 'users.index' ? 'text-white bg-gradient-to-r from-blue-700 to-blue-200' : 'text-gray-600 group' }}">
+                  <i class="fa-solid fa-users-rectangle"></i>
+                  <span class="group-hover:text-gray-700">Users Account</span>
+                </a>
+              </li>
+
+              <div class="pl-6 pt-4 ml-2 font-bold leading-tight uppercase text-xs opacity-60">Manage Project</div>
+              <li>
+                <a href="{{ route('superadmin.entryindex') }}" aria-label="profile" class="relative px-4 py-3 flex items-center space-x-4 rounded-md {{ Route::currentRouteName() == '' ? 'text-white bg-gradient-to-r from-blue-700 to-blue-200' : 'text-gray-600 group' }}">
+                  <i class="fa-solid fa-file-circle-plus"></i>
+                  <span class="group-hover:text-gray-700">Project Entry</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" aria-label="profile" class="relative px-4 py-3 flex items-center space-x-4 rounded-md {{ Route::currentRouteName() == '' ? 'text-white bg-gradient-to-r from-blue-700 to-blue-200' : 'text-gray-600 group' }}">
+                  <i class="fa-solid fa-list-check"></i>
+                  <span class="group-hover:text-gray-700">Project Evaluation</span>
+                </a>
+              </li>
+    
+              <div class="pl-6 pt-4 ml-2 font-bold leading-tight uppercase text-xs opacity-60">Manage Payment</div>
+              <li>
+                <a href="#" aria-label="profile" class="relative px-4 py-3 flex items-center space-x-4 rounded-md {{ Route::currentRouteName() == '' ? 'text-white bg-gradient-to-r from-blue-700 to-blue-200' : 'text-gray-600 group' }}">
+                  <i class="fa-solid fa-credit-card"></i>
+                  <span class="group-hover:text-gray-700">Project Payment</span>
+                </a>
+              </li>
             @endif
 
             @if (Auth::user()->hasRole('juror'))
@@ -167,7 +211,7 @@
 
             <div class="pl-6 pt-4 ml-2 font-bold leading-tight uppercase text-xs opacity-60">Manage Account</div>
             <li>
-              <a href="{{ route('superadmin.profile') }}" aria-label="profile" class="relative px-4 py-3 flex items-center space-x-4 rounded-md {{ Route::currentRouteName() == 'superadmin.profile' ? 'text-white bg-gradient-to-r from-yellow-300 to-yellow-200' : 'text-gray-600 group' }}">
+              <a href="{{ route('juror.profile') }}" aria-label="profile" class="relative px-4 py-3 flex items-center space-x-4 rounded-md {{ Route::currentRouteName() == 'juror.profile' ? 'text-white bg-gradient-to-r from-yellow-300 to-yellow-200' : 'text-gray-600 group' }}">
                 <i class="fa-solid fa-address-card"></i>
                 <span class="group-hover:text-gray-700">Profile</span>
               </a>
@@ -207,16 +251,9 @@
 
               <div class="pl-6 pt-4 ml-2 font-bold leading-tight uppercase text-xs opacity-60">Manage Account</div>
               <li>
-                <a href="{{ route('superadmin.profile') }}" aria-label="profile" class="relative px-4 py-3 flex items-center space-x-4 rounded-md {{ Route::currentRouteName() == 'superadmin.profile' ? 'text-white bg-gradient-to-r from-rose-700 to-rose-200' : 'text-gray-600 group' }}">
+                <a href="{{ route('participant.profile') }}" aria-label="profile" class="relative px-4 py-3 flex items-center space-x-4 rounded-md {{ Route::currentRouteName() == 'superadmin.profile' ? 'text-white bg-gradient-to-r from-rose-700 to-rose-200' : 'text-gray-600 group' }}">
                   <i class="fa-solid fa-address-card"></i>
                   <span class="group-hover:text-gray-700">Profile</span>
-                </a>
-              </li>
-
-              <li>
-                <a href="{{ route('users.index') }}" aria-label="profile" class="relative px-4 py-3 flex items-center space-x-4 rounded-md {{ Route::currentRouteName() == 'users.index' ? 'text-white bg-gradient-to-r from-rose-700 to-rose-200' : 'text-gray-600 group' }}">
-                  <i class="fa-solid fa-users-rectangle"></i>
-                  <span class="group-hover:text-gray-700">Users Account</span>
                 </a>
               </li>
 

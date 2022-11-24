@@ -12,7 +12,14 @@ use App\Models\User;
 class SuperAdminController extends Controller
 {
     public function profile() {
-        return view('account.superadmin.profile');
+        if (Auth::check() && (Auth::user()->hasRole('superadmin'))) {
+            $user = Auth::user();
+
+            return view('account.superadmin.profile', compact('user'));
+        }
+        else {
+            return redirect()->route('login');
+        }
     }
 
     public function list() {

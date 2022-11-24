@@ -16,7 +16,9 @@ class AdminController extends Controller
 {
     public function profile() {
         if (Auth::check() && (Auth::user()->hasRole('admin'))) {
-            return view('account.admin.profile');
+            $user = Auth::user();
+
+            return view('account.admin.profile', compact('user'));
         }
         else {
             return redirect()->route('login');

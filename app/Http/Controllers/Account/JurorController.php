@@ -81,9 +81,11 @@ class JurorController extends Controller
     }
 
     public function profile() {
+        
         if (Auth::check() && (Auth::user()->hasRole('juror'))) {
+            $user = Auth::user();
 
-            return view('account.juror.profile');
+            return view('account.juror.profile', compact('user'));
         }
         else {
             return redirect()->route('login');

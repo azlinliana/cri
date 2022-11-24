@@ -38,7 +38,7 @@ class UserController extends Controller
     
     public function index() {
         if (Auth::user()->hasRole('superadmin') || Auth::user()->hasRole('admin')) {
-            $superadmins = User::all();
+            $superadmins = User::join('role_user', [['users.id', 'role_user.user_id']])->where('role_id', '1')->get();
             $countSuperAdmin = $superadmins->count();
 
             $admins = Admin::all();
