@@ -260,5 +260,44 @@ Route::middleware('auth')->group(function () {
 
         Route::put('/superadmin-cluster-update/{cluster}', [ClusterController::class, 'update'])
                     ->name('superadmin.cluster.update');
+
+        Route::get('/users-list-all', [EntryController::class, 'listAllEntryRequest'])
+                    ->name('entry.users.list.all');
+
+        Route::get('/users-list-pending', [EntryController::class, 'listPendingEntryRequest'])
+                    ->name('entry.users.list.pending');
+
+        Route::get('/users-list-accepted', [EntryController::class, 'listAcceptedEntryRequest'])
+                    ->name('entry.users.list.accepted');
+
+        Route::get('/users-list-rejected', [EntryController::class, 'listRejectedEntryRequest'])
+                    ->name('entry.users.list.rejected');
+
+        Route::get('/users-search', [EntryController::class, 'searchEntryRequest'])
+                    ->name('entry.users.search');
+
+        Route::get('/participant-list-all', [EntryController::class, 'listAllEntry'])
+                    ->name('entry.participant.list.all');
+
+        Route::get('/participant-list-draft', [EntryController::class, 'listDraftEntry'])
+                    ->name('entry.participant.list.draft');
+
+        Route::get('/participant-list-pending', [EntryController::class, 'listPendingEntry'])
+                    ->name('entry.participant.list.pending');
+
+        Route::get('/participant-list-accepted', [EntryController::class, 'listAcceptedEntry'])
+                    ->name('entry.participant.list.accepted');
+
+        Route::get('/participant-list-rejected', [EntryController::class, 'listRejectedEntry'])
+                    ->name('entry.participant.list.rejected');
+
+        Route::get('/participant-search', [EntryController::class, 'searchEntry'])
+                    ->name('entry.participant.search');
+
+        Route::get('/participant-create', [EntryController::class, 'createEntry'])
+                    ->name('entry.participant.create');
+
+        Route::post('/participant-create', [EntryController::class, 'sendDraft']);
+
     });    
 });

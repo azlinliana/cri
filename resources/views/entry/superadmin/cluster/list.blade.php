@@ -15,15 +15,15 @@
             </div>
           </div>
 
+          <div class="tooltip tooltip-right ml-1 mt-1 mb-6" data-tip="Add cluster">
+            <label for="create-cluster-modal" class="modal-button text-rose-500 border border-rose-400 hover:bg-rose-600 hover:text-white focus:ring-4 focus:outline-none focus:ring-rose-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:border-rose-500 dark:text-rose-500 dark:hover:text-white dark:focus:ring-rose-60">
+              <i class="fa-solid fa-plus"></i>
+              <span class="sr-only">Add cluster</span>
+            </label>
+          </div>
+
           <div class="overflow-x-auto relative">
             <div class="overflow-x-auto">
-              <div class="tooltip tooltip-right ml-1 mt-1 mb-6" data-tip="Add cluster">
-                <label for="create-cluster-modal" class="modal-button text-rose-500 border border-rose-400 hover:bg-rose-600 hover:text-white focus:ring-4 focus:outline-none focus:ring-rose-300 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center mr-2 dark:border-rose-500 dark:text-rose-500 dark:hover:text-white dark:focus:ring-rose-60">
-                  <i class="fa-solid fa-plus"></i>
-                  <span class="sr-only">Add cluster</span>
-                </label>
-              </div>
-
               <!-- Create Cluster Modal -->
               <input type="checkbox" id="create-cluster-modal" class="modal-toggle" />
 

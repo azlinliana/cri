@@ -15,7 +15,7 @@
       </div>
     </a>
 
-    <a href="#">
+    <a href="{{ route('entry.users.list.all') }}">
       <div class="bg-white max-w-xs shadow-lg mx-auto border-b-4 border-rose-400 rounded-2xl overflow-hidden  hover:shadow-2xl transition duration-500 transform hover:scale-105 cursor-pointer" >
         <div class="bg-rose-400 flex h-20  items-center">
           <div class="text-white ml-4 border-2 py-2 px-4 rounded-full">2</div>
